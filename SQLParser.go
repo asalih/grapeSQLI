@@ -111,7 +111,7 @@ func SQLInject(src string) error {
 	libinjection_sqli_init(&state, src, len(src), 0)
 	issqli := libinjection_is_sqli(&state)
 	if issqli {
-		return fmt.Errorf("内容非法，涵盖非法信息，指纹:%s", string(state.fingerprint))
+		return fmt.Errorf("Illegal content, covering illegal information, fingerprints: %s", string(state.fingerprint))
 	}
 
 	return nil
